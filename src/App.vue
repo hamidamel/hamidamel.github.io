@@ -1,32 +1,93 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
   </div>
 </template>
 
+
 <style lang="scss">
+@import "assets/style.css";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: "Dana", Helvetica, Arial, sans-serif;
+  text-align: left;
+  direction: ltr;
 }
 
-#nav {
-  padding: 30px;
+.container {
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  min-height: 100vh;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  .exprience-date {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: flex-end;
+    border-right: 1px solid rgba(3, 3, 3, 0.2);
+    padding-right: 10px;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    .year-label {
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 64px;
     }
+    .month-duration-label {
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 200;
+      color: rgba(3, 3, 3, 0.8);
+    }
+  }
+  .experince-preview{
+    grid-area: 1 / 3 / 5 / 5;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .exprience-description {
+    grid-area: 2 / 2 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: flex-start;
+
+    .description {
+      margin-bottom: 40px;
+    }
+    h2 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+      margin-top: 2px;
+    }
+
+    .description-items {
+      display: flex;
+      flex-direction: column;
+      .item {
+        .title {
+          font-weight: 600;
+        }
+        .information {
+          font-weight: 100;
+        }
+      }
+    }
+  }
+
+  .col-1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .col-1 {
+    grid-area: 1 / 2 / 2 / 2;
   }
 }
 </style>

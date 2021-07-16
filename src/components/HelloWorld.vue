@@ -1,105 +1,45 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-          >babel</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router"
-          target="_blank"
-          rel="noopener"
-          >router</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-          >eslint</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript"
-          target="_blank"
-          rel="noopener"
-          >typescript</a
-        >
-      </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-          >Forum</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-          >Twitter</a
-        >
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li>
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener"
-          >vue-router</a
-        >
-      </li>
-      <li>
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-          >vue-devtools</a
-        >
-      </li>
-      <li>
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
-          >vue-loader</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-          rel="noopener"
-          >awesome-vue</a
-        >
-      </li>
-    </ul>
-  </div>
+  <transition name="fade">
+    <div class="container" v-if="!startWeel">
+      <div class="exprience-date">
+        <span class="year-label">{{ experiences[currentExpIndex].year }}</span>
+        <span class="month-duration-label"
+          >{{ experiences[currentExpIndex].duration }}
+        </span>
+      </div>
+      <div class="exprience-description">
+        <h2>{{ experiences[currentExpIndex].title }}</h2>
+        <p class="description">
+          {{ experiences[currentExpIndex].description }}
+        </p>
+
+        <div class="description-items">
+          <div class="item">
+            <span class="title">Exprience</span>
+            <p class="information">
+              Freelance project
+              <br />
+              ≈ 250 Hours
+            </p>
+          </div>
+
+          <div class="item">
+            <span class="title">Skills</span>
+            <p class="information">Sketch App</p>
+          </div>
+
+          <div class="item">
+            <span class="title">Demo</span>
+            <p class="information">Take a look at the design</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="experince-preview">
+        <img src="../assets/phone-mockup.svg" width="240px" />
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script lang="ts">
@@ -107,24 +47,68 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
+  currentExpIndex = 0;
+  lastWDelta: any;
+  startWeel = false;
+  experiences = [
+    {
+      year: 2021,
+      duration: "January, 30 - June 30",
+      title: "FutureU",
+      description:
+        "is a 3D human body scanner android application by order of Payafanavaran Co. I was designed fully custom widgets to use in Flutter which is mentions in the developer part of my website.",
+    },
+    {
+      year: 2020,
+      duration: "January, 30 - June 30",
+      title: "OcularAI",
+      description:
+        "A Ui/Ux design for one of OcularAI Inc. projects. I designed a users panel Dashboard in four pages with adhere to Google Material Design System.",
+    },
+    { year: 2019, duration: "January, 30 - June 30", title: "OcularAI" },
+  ];
+
+  created() {
+    window.addEventListener("wheel", this.handleScroll, { passive: false });
+  }
+  destroyed() {
+    // window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event: any) {
+    event.preventDefault();
+    this.startWeel = true;
+    let wDelta = event.wheelDelta < 0 ? "down" : "up";
+    if (!this.lastWDelta) {
+      //start
+    }
+    clearTimeout(this.lastWDelta);
+    this.lastWDelta = setTimeout(() => {
+      this.startWeel = false;
+      if (
+        wDelta == "down" &&
+        this.currentExpIndex < this.experiences.length - 1
+      ) {
+        this.currentExpIndex += 1;
+      }
+      if (wDelta == "up" && this.currentExpIndex > 0) {
+        this.currentExpIndex -= 1;
+      }
+    }, 100);
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 100ms;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
 }
 </style>
