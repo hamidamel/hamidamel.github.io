@@ -9,6 +9,7 @@
 @media only screen and (min-width: 340px) {
   .container {
     max-width: 100vw;
+    padding: 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
