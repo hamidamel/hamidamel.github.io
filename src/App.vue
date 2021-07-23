@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <page-header>
+  <div id="app" :class="$route.meta.theme">
+    <page-header :theme="$route.meta.theme">
       <template v-slot:title>{{ $route.name }}</template>
     </page-header>
     <router-view />
@@ -43,6 +43,10 @@ export default class App extends Vue {}
   font-family: "Dana", Helvetica, Arial, sans-serif;
   text-align: left;
   direction: ltr;
+  height: 100vh;
+  &.dark {
+    background: black;
+  }
 }
 .justify-content-end {
   justify-content: flex-end;
@@ -53,5 +57,4 @@ export default class App extends Vue {}
 .justify-content-start {
   justify-content: flex-start;
 }
-
 </style>

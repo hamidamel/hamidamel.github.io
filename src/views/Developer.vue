@@ -1,7 +1,11 @@
 <template>
-  <Expriences :experiences="experiences" :theme="dark" />
+  <Expriences :experiences="experiences" :theme="'dark'" />
 </template>
-
+<style scoped>
+body {
+  background: black;
+}
+</style>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Expriences from "../components/Expriences.vue";

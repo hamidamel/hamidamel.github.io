@@ -1,6 +1,6 @@
 <template>
   <div>
-    <arrow-buttons>
+    <arrow-buttons :theme="theme">
       <template v-slot:left>
         <button
           class="justify-content-start"
@@ -44,7 +44,7 @@
       </template>
     </arrow-buttons>
     <transition name="fade">
-      <div class="container" v-if="!startWeel">
+      <div class="container" :class="theme" v-if="!startWeel">
         <div class="exprience-date">
           <span class="year-label">{{
             experiences[currentExpIndex].year
@@ -173,7 +173,6 @@ export default class Expriences extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 @media only screen and (min-width: 320px) {
   .container {
     max-width: 100vw;
@@ -184,6 +183,10 @@ export default class Expriences extends Vue {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     max-height: 100vh;
+    &.dark {
+      background-color: black;
+      color: white;
+    }
     .exprience-date {
       grid-area: 2 / 1 / 2 / 1;
       display: flex;
@@ -259,7 +262,10 @@ export default class Expriences extends Vue {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     min-height: 100vh;
-
+    &.dark {
+      background-color: black;
+      color: white;
+    }
     .exprience-date {
       grid-area: 2 / 1 / 3 / 2;
       display: flex;

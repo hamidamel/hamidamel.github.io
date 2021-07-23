@@ -13,6 +13,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/developer",
     name: "Developer",
+    meta: { theme: "dark" },
     component: () => import("../views/Developer.vue"),
   },
   {

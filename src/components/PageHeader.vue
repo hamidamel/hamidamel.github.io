@@ -1,5 +1,5 @@
 <template>
-  <div class="header-buttons">
+  <div class="header-buttons" :class="theme">
     <button @click="showMenu">
       <menu-icon size="1.5x"> </menu-icon>
     </button>
@@ -20,6 +20,7 @@ import MenuModal from "./MenuModal.vue";
     MenuIcon,
     MenuModal,
   },
+  props: ["theme"],
 })
 export default class PageHeader extends Vue {
   openMenu = false;
@@ -48,6 +49,13 @@ export default class PageHeader extends Vue {
   padding-bottom: 40px;
   z-index: 100;
   background-color: white;
+  &.dark {
+    background-color: black;
+    color: white;
+    > button {
+      color: white;
+    }
+  }
   .title {
     font-weight: 800;
     height: 24px;

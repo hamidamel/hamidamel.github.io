@@ -1,5 +1,5 @@
 <template>
-  <div class="arrow-buttons">
+  <div class="arrow-buttons" :class="theme">
     <slot name="left"></slot>
     <slot name="center"></slot>
     <slot name="right"></slot>
@@ -9,6 +9,7 @@
 export default {
   name: "ArrowButtons",
   components: {},
+  props: ["theme"],
 };
 </script>
 
@@ -31,6 +32,12 @@ export default {
   margin-bottom: 20px;
   width: 100%;
   background-color: white;
+  &.dark {
+    background-color: black;
+    > button {
+      color: white;
+    }
+  }
   > button {
     margin-left: 20px;
     margin-right: 20px;
