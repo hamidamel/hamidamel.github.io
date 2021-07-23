@@ -6,23 +6,24 @@
 
 <style lang="scss">
 @import "assets/style.css";
-@media only screen and (min-width: 340px) {
+
+@media only screen and (min-width: 320px) {
   .container {
     max-width: 100vw;
-    padding: 10px;
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     max-height: 100vh;
     .exprience-date {
-      grid-area: 2 / 2 / 3 / 1;
+      grid-area: 2 / 1 / 2 / 1;
       display: flex;
       flex-direction: column;
       align-content: stretch;
-      align-items: flex-end;
-      border-right: 1px solid rgba(3, 3, 3, 0.2);
+      align-items: flex-start;
+
       padding-right: 10px;
 
       .year-label {
@@ -31,18 +32,21 @@
         line-height: 64px;
       }
       .month-duration-label {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 18px;
         font-weight: 200;
         color: rgba(3, 3, 3, 0.8);
       }
+    }
+    .hide-in-mobile {
+      display: none;
     }
     .experince-preview {
       display: none;
     }
 
     .exprience-description {
-      grid-area: 2 / 2 / 3 / 3;
+      grid-area: 3 / 1 / 3 / 3;
       display: flex;
       flex-direction: column;
       align-content: stretch;
@@ -57,6 +61,7 @@
       p {
         margin: 0;
         margin-top: 2px;
+        line-height: 1.34rem;
       }
 
       .description-items {
@@ -67,7 +72,7 @@
             font-weight: 600;
           }
           .information {
-            font-weight: 100;
+            font-weight: 200;
           }
         }
       }
@@ -79,7 +84,20 @@
   text-align: left;
   direction: ltr;
 }
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+
 @media only screen and (min-width: 768px) {
+  .hide-in-desktop {
+    display: none !important;
+  }
   .container {
     max-width: 1440px;
     display: grid;
@@ -115,7 +133,7 @@
       display: flex;
       flex-direction: column;
       align-content: stretch;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
     }
     .exprience-description {
@@ -144,7 +162,12 @@
             font-weight: 600;
           }
           .information {
-            font-weight: 100;
+            font-weight: 200;
+            display: flex;
+            align-content: flex-start;
+            vertical-align: middle;
+            flex-direction: row;
+            justify-content: flex-start;
           }
         }
       }
