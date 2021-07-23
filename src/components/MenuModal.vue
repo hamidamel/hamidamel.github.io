@@ -68,7 +68,7 @@ export default {
   color: black;
   width: 100%;
   height: 100%;
-  text-align: right;
+  text-align: left;
   justify-content: center;
   padding: 40px;
   a {

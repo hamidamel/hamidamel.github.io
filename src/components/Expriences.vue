@@ -117,29 +117,14 @@ import PageHeader from "./PageHeader.vue";
     ArrowButtons,
     PageHeader,
   },
+  props: ['experiences'],
 })
 export default class Expriences extends Vue {
   currentExpIndex = 0;
   lastWDelta = "";
   startWeel = false;
   openPreview = false;
-  experiences = [
-    {
-      year: 2021,
-      duration: "January, 30 - June 30",
-      title: "FutureU",
-      description:
-        "is a 3D human body scanner android application by order of Payafanavaran Co. I was designed fully custom widgets to use in Flutter which is mentions in the developer part of my website.",
-    },
-    {
-      year: 2020,
-      duration: "January, 30 - June 30",
-      title: "OcularAI",
-      description:
-        "A Ui/Ux design for one of OcularAI Inc. projects. I designed a users panel Dashboard in four pages with adhere to Google Material Design System.",
-    },
-    { year: 2019, duration: "January, 30 - June 30", title: "OcularAI" },
-  ];
+  
   showModal() {
     this.openPreview = true;
   }
