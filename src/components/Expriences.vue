@@ -88,7 +88,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { ChevronRightIcon } from "vue-feather-icons";
 import { ChevronLeftIcon } from "vue-feather-icons";
@@ -107,7 +107,7 @@ import PreviewModal from "./PreviewModal.vue";
 })
 export default class HelloWorld extends Vue {
   currentExpIndex = 0;
-  lastWDelta: any;
+  lastWDelta = "";
   startWeel = false;
   openPreview = false;
   experiences = [
@@ -139,14 +139,14 @@ export default class HelloWorld extends Vue {
   destroyed() {
     // window.removeEventListener('scroll', this.handleScroll);
   }
-  changeCurrentExp(newValue: number): void {
+  changeCurrentExp(newValue) {
     this.startWeel = true;
     setTimeout(() => {
       this.currentExpIndex += newValue;
       this.startWeel = false;
     }, 200);
   }
-  handleScroll(event: any) {
+  handleScroll(event) {
     event.preventDefault();
     this.startWeel = true;
     let wDelta = event.wheelDelta < 0 ? "down" : "up";
