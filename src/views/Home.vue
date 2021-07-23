@@ -1,15 +1,11 @@
 <template>
-  <div class="home">
-    <HelloWorld />
-  </div>
+  <div>Home</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "../components/Expriences.vue";
 @Component({
   components: {
-    HelloWorld,
   },
 })
 export default class Home extends Vue {}

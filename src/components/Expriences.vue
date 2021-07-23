@@ -1,9 +1,5 @@
 <template>
   <div>
-    <page-header>
-      <template v-slot:title>Expriences</template>
-    </page-header>
-
     <arrow-buttons>
       <template v-slot:left>
         <button
@@ -122,7 +118,7 @@ import PageHeader from "./PageHeader.vue";
     PageHeader,
   },
 })
-export default class HelloWorld extends Vue {
+export default class Expriences extends Vue {
   currentExpIndex = 0;
   lastWDelta = "";
   startWeel = false;

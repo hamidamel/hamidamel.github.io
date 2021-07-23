@@ -1,12 +1,36 @@
 <template>
   <div id="app">
+    <page-header>
+      <template v-slot:title>{{ $route.name }}</template>
+    </page-header>
     <router-view />
   </div>
 </template>
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import PageHeader from "./components/PageHeader.vue";
 
+@Component({
+  components: {
+    PageHeader,
+  },
+  computed: {
+    currentRouteName() {
+      return this.$route.name;
+    },
+  },
+})
+export default class App extends Vue {}
+</script>
 <style lang="scss">
 @import "assets/style.css";
-
+.menu-exact-active {
+  color: indianred;
+  cursor: pointer;
+}
+.menu-active {
+  color: red;
+}
 @media only screen and (min-width: 320px) {
   .container {
     max-width: 100vw;

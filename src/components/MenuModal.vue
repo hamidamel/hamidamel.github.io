@@ -2,15 +2,42 @@
   <transition name="modal-fade">
     <div class="modal-backdrop">
       <div class="modal">
-        <slot name="body"></slot>
+        <slot name="body">
+          <router-link to="/" v-on:click.native="close">Home</router-link>
+          <router-link to="/developer" v-on:click.native="close"
+            >Developing Exp</router-link
+          >
+          <router-link to="/designer" v-on:click.native="close"
+            >Designing Exp</router-link
+          >
+          <router-link to="/designer" v-on:click.native="close"
+            >Skills</router-link
+          >
+          <router-link to="/designer" v-on:click.native="close"
+            >Personal Info</router-link
+          >
+        </slot>
       </div>
+      <arrow-buttons>
+        <template v-slot:left> </template>
+        <template v-slot:center>
+          <button class="justify-content-center hide-in-desktop" @click="close">
+            <x-circle-icon size="1.5x"></x-circle-icon>
+          </button>
+        </template>
+        <template v-slot:right> </template>
+      </arrow-buttons>
     </div>
   </transition>
 </template>
 
 <script>
+import ArrowButtons from "./ArrowButtons.vue";
+import { XCircleIcon } from "vue-feather-icons";
 export default {
   components: {
+    XCircleIcon,
+    ArrowButtons,
   },
   name: "MenuModal",
   methods: {
@@ -31,14 +58,26 @@ export default {
   background-color: rgba(255, 255, 255, 0.98);
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .modal {
-  background: #ffffff;
+  background: white;
   overflow-x: auto;
   display: flex;
   flex-direction: column;
+  color: black;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  justify-content: center;
+  padding: 40px;
+  a {
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 50px;
+    font-weight: 200;
+  }
 }
 
 .modal-header,
@@ -55,10 +94,6 @@ export default {
 .modal-footer {
   flex-direction: column;
   justify-content: flex-end;
-}
-
-.modal-body {
-  position: relative;
 }
 
 .btn-close {
