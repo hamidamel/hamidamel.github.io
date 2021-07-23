@@ -65,14 +65,14 @@ export default {
   overflow-x: auto;
   display: flex;
   flex-direction: column;
-  color: black;
+  color: rgb(37, 37, 38);
   width: 100%;
   height: 100%;
   text-align: left;
   justify-content: center;
   padding: 40px;
   a {
-    color: black;
+    color: rgb(37, 37, 38);
     text-decoration: none;
     font-size: 24px;
     line-height: 60px;
@@ -101,7 +101,7 @@ export default {
   font-size: 20px;
   cursor: pointer;
   font-weight: bold;
-  color: black;
+  color: rgb(37, 37, 38);
   background: transparent;
 }
 

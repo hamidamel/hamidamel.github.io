@@ -184,8 +184,13 @@ export default class Expriences extends Vue {
     grid-row-gap: 10px;
     max-height: 100vh;
     &.dark {
-      background-color: black;
+      background-color: rgb(37, 37, 38);
       color: white;
+      .exprience-date {
+        .month-duration-label {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
     }
     .exprience-date {
       grid-area: 2 / 1 / 2 / 1;
@@ -260,8 +265,13 @@ export default class Expriences extends Vue {
     grid-row-gap: 10px;
     min-height: 100vh;
     &.dark {
-      background-color: black;
+      background-color: rgb(37, 37, 38);
       color: white;
+      .exprience-date {
+        .month-duration-label {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
     }
     .exprience-date {
       grid-area: 2 / 1 / 3 / 2;

@@ -3,7 +3,7 @@
 </template>
 <style scoped>
 body {
-  background: black;
+  background: rgb(37, 37, 38);
 }
 </style>
 <script lang="ts">

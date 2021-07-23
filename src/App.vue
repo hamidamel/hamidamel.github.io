@@ -47,7 +47,7 @@ export default class App extends Vue {}
   direction: ltr;
   height: 100vh;
   &.dark {
-    background: black;
+    background: rgb(37, 37, 38);
   }
 }
 .justify-content-end {

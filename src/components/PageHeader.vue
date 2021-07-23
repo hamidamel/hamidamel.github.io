@@ -50,7 +50,7 @@ export default class PageHeader extends Vue {
   z-index: 100;
   background-color: white;
   &.dark {
-    background-color: black;
+    background-color: rgb(37, 37, 38);
     color: white;
     > button {
       color: white;
@@ -63,7 +63,7 @@ export default class PageHeader extends Vue {
   }
   > button {
     background-color: transparent;
-    color: black;
+    color: rgb(37, 37, 38);
     border: none;
     display: flex;
     margin-right: 10px;

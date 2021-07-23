@@ -33,7 +33,7 @@ export default {
   width: 100%;
   background-color: white;
   &.dark {
-    background-color: black;
+    background-color: rgb(37, 37, 38);
     > button {
       color: white;
     }
@@ -42,7 +42,7 @@ export default {
     margin-left: 20px;
     margin-right: 20px;
     background-color: transparent;
-    color: black;
+    color: rgb(37, 37, 38);
     border: none;
     padding: 0.4rem;
     padding-left: 0.8rem;

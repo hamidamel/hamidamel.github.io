@@ -63,7 +63,7 @@ export default {
   justify-content: center;
   align-items: center;
   &.dark {
-    background-color: rgba(0, 0, 0, 0.98);
+    background-color: rgba(37, 37, 38, 0.98);
   }
 }
 
@@ -99,7 +99,7 @@ export default {
   font-size: 20px;
   cursor: pointer;
   font-weight: bold;
-  color: black;
+  color: rgb(37, 37, 38);
   background: transparent;
 }
 
