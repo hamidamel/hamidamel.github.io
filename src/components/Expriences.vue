@@ -90,7 +90,7 @@
       </div>
     </transition>
 
-    <PreviewModal v-show="openPreview" @close="closeModal">
+    <PreviewModal v-show="openPreview" @close="closeModal" :theme="theme">
       <template v-slot:header></template>
       <template v-slot:body>
         <img src="../assets/phone-mockup.svg" width="240px" />
@@ -251,9 +251,6 @@ export default class Expriences extends Vue {
 }
 
 @media only screen and (min-width: 768px) {
-  .hide-in-desktop {
-    display: none !important;
-  }
   .container {
     max-width: 1440px;
     display: grid;

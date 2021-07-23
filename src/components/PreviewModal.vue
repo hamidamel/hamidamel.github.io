@@ -1,6 +1,6 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop">
+    <div class="modal-backdrop" :class="theme">
       <div class="modal">
         <header class="modal-header" id="modalTitle">
           <slot name="header"></slot>
@@ -8,7 +8,7 @@
         <slot name="body"></slot>
         <slot name="footer"> </slot>
       </div>
-      <arrow-buttons>
+      <arrow-buttons :theme="theme">
         <template v-slot:left>
           <button class="justify-content-start">
             <chevron-left-icon size="1.5x"></chevron-left-icon>
@@ -47,6 +47,7 @@ export default {
       this.$emit("close");
     },
   },
+  props: ["theme"],
 };
 </script>
 
@@ -61,6 +62,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  &.dark {
+    background-color: rgba(0, 0, 0, 0.98);
+  }
 }
 
 .modal {

@@ -3,7 +3,9 @@
     <page-header :theme="$route.meta.theme">
       <template v-slot:title>{{ $route.name }}</template>
     </page-header>
-    <router-view />
+    <transition name="fade">
+      <router-view />
+    </transition>
   </div>
 </template>
 <script lang="ts">
@@ -56,5 +58,11 @@ export default class App extends Vue {}
 }
 .justify-content-start {
   justify-content: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+  .hide-in-desktop {
+    display: none !important;
+  }
 }
 </style>
