@@ -1,5 +1,5 @@
 <template>
-  <Expriences :experiences="experiences" />
+  <Expriences :experiences="experiences" :theme="dark" />
 </template>
 
 <script lang="ts">
