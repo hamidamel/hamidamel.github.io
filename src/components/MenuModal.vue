@@ -10,10 +10,10 @@
           <router-link to="/designer" v-on:click.native="close"
             >Designing Exp</router-link
           >
-          <router-link to="/designer" v-on:click.native="close"
+          <router-link to="/skills" v-on:click.native="close"
             >Skills</router-link
           >
-          <router-link to="/designer" v-on:click.native="close"
+          <router-link to="/about" v-on:click.native="close"
             >Personal Info</router-link
           >
         </slot>

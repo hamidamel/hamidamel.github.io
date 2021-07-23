@@ -4,15 +4,18 @@
       <template v-slot:left>
         <button
           class="justify-content-start"
-          v-on:click="changeCurrentExp(-1)"
-          :disabled="!experiences[currentExpIndex - 1]"
+          v-on:click="
+            !experiences[currentExpIndex - 1]
+              ? $router.push('/')
+              : changeCurrentExp(-1)
+          "
         >
           <chevron-left-icon size="1.5x"></chevron-left-icon>
           <span>
             {{
               experiences[currentExpIndex - 1]
                 ? experiences[currentExpIndex - 1].year
-                : "School :)"
+                : "Home"
             }}</span
           >
         </button>
@@ -117,14 +120,14 @@ import PageHeader from "./PageHeader.vue";
     ArrowButtons,
     PageHeader,
   },
-  props: ['experiences'],
+  props: ["experiences"],
 })
 export default class Expriences extends Vue {
   currentExpIndex = 0;
   lastWDelta = "";
   startWeel = false;
   openPreview = false;
-  
+
   showModal() {
     this.openPreview = true;
   }

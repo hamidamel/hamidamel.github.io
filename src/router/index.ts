@@ -20,6 +20,21 @@ const routes: Array<RouteConfig> = [
     name: "Designer",
     component: () => import("../views/Designer.vue"),
   },
+  {
+    path: "/about",
+    name: "About Me",
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/education",
+    name: "Education",
+    component: () => import("../views/Education.vue"),
+  },
+  {
+    path: "/skills",
+    name: "Skills",
+    component: () => import("../views/Skills.vue"),
+  },
 ];
 
 const router = new VueRouter({
