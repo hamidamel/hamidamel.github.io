@@ -1,36 +1,49 @@
 <template>
   <div>
-    <div class="arrow-buttons">
-      <button
-        class="justify-content-start"
-        v-on:click="changeCurrentExp(-1)"
-        :disabled="!experiences[currentExpIndex - 1]"
-      >
-        <chevron-left-icon size="1.5x"></chevron-left-icon>
-        <span>
-          {{
-            experiences[currentExpIndex - 1]
-              ? experiences[currentExpIndex - 1].year
-              : "School :)"
-          }}</span
+    <page-header>
+      <template v-slot:title>Expriences</template>
+    </page-header>
+
+    <arrow-buttons>
+      <template v-slot:left>
+        <button
+          class="justify-content-start"
+          v-on:click="changeCurrentExp(-1)"
+          :disabled="!experiences[currentExpIndex - 1]"
         >
-      </button>
-      <button class="justify-content-center hide-in-desktop" @click="showModal">
-        <box-icon size="1.5x"></box-icon>
-      </button>
-      <button
-        class="justify-content-end"
-        v-on:click="changeCurrentExp(1)"
-        :disabled="!experiences[currentExpIndex + 1]"
-      >
-        {{
-          experiences[currentExpIndex + 1]
-            ? experiences[currentExpIndex + 1].year
-            : "I have ..."
-        }}
-        <chevron-right-icon size="1.5x"></chevron-right-icon>
-      </button>
-    </div>
+          <chevron-left-icon size="1.5x"></chevron-left-icon>
+          <span>
+            {{
+              experiences[currentExpIndex - 1]
+                ? experiences[currentExpIndex - 1].year
+                : "School :)"
+            }}</span
+          >
+        </button>
+      </template>
+      <template v-slot:center>
+        <button
+          class="justify-content-center hide-in-desktop"
+          @click="showModal"
+        >
+          <box-icon size="1.5x"></box-icon>
+        </button>
+      </template>
+      <template v-slot:right>
+        <button
+          class="justify-content-end"
+          v-on:click="changeCurrentExp(1)"
+          :disabled="!experiences[currentExpIndex + 1]"
+        >
+          {{
+            experiences[currentExpIndex + 1]
+              ? experiences[currentExpIndex + 1].year
+              : "I have ..."
+          }}
+          <chevron-right-icon size="1.5x"></chevron-right-icon>
+        </button>
+      </template>
+    </arrow-buttons>
     <transition name="fade">
       <div class="container" v-if="!startWeel">
         <div class="exprience-date">
@@ -89,12 +102,14 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { ChevronRightIcon } from "vue-feather-icons";
 import { ChevronLeftIcon } from "vue-feather-icons";
 import { ExternalLinkIcon } from "vue-feather-icons";
 import { BoxIcon } from "vue-feather-icons";
 import PreviewModal from "./PreviewModal.vue";
+import ArrowButtons from "./ArrowButtons.vue";
+import PageHeader from "./PageHeader.vue";
 
 @Component({
   components: {
@@ -103,6 +118,8 @@ import PreviewModal from "./PreviewModal.vue";
     BoxIcon,
     ExternalLinkIcon,
     PreviewModal,
+    ArrowButtons,
+    PageHeader,
   },
 })
 export default class HelloWorld extends Vue {
@@ -181,41 +198,5 @@ export default class HelloWorld extends Vue {
 .fade-leave-to
 /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
-}
-@media only screen and (min-width: 768px) {
-  .arrow-buttons {
-    bottom: 50% !important;
-  }
-}
-.arrow-buttons {
-  display: flex;
-  align-content: space-around;
-  justify-content: space-between;
-  position: fixed;
-  flex: 1;
-  bottom: 0px;
-  line-height: 2rem;
-  text-align: center;
-  margin-bottom: 20px;
-  width: 100%;
-
-  > button {
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: transparent;
-    color: black;
-    border: none;
-    padding: 0.4rem;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-    display: flex;
-    align-items: center;
-    line-height: 1rem;
-    flex: 2;
-
-    &:disabled {
-      color: rgba(0, 0, 0, 0.2);
-    }
-  }
 }
 </style>

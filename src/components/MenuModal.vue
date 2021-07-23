@@ -2,46 +2,17 @@
   <transition name="modal-fade">
     <div class="modal-backdrop">
       <div class="modal">
-        <header class="modal-header" id="modalTitle">
-          <slot name="header"></slot>
-        </header>
         <slot name="body"></slot>
-        <slot name="footer"> </slot>
       </div>
-      <arrow-buttons>
-        <template v-slot:left>
-          <button class="justify-content-start">
-            <chevron-left-icon size="1.5x"></chevron-left-icon>
-          </button>
-        </template>
-        <template v-slot:center>
-          <button class="justify-content-center hide-in-desktop" @click="close">
-            <x-circle-icon size="1.5x"></x-circle-icon>
-          </button>
-        </template>
-        <template v-slot:right>
-          <button class="justify-content-end">
-            <chevron-right-icon size="1.5x"></chevron-right-icon>
-          </button>
-        </template>
-      </arrow-buttons>
     </div>
   </transition>
 </template>
 
 <script>
-import { XCircleIcon } from "vue-feather-icons";
-import { ChevronRightIcon } from "vue-feather-icons";
-import { ChevronLeftIcon } from "vue-feather-icons";
-import ArrowButtons from "./ArrowButtons.vue";
 export default {
   components: {
-    XCircleIcon,
-    ChevronRightIcon,
-    ChevronLeftIcon,
-    ArrowButtons,
   },
-  name: "PreviewModal",
+  name: "MenuModal",
   methods: {
     close() {
       this.$emit("close");
