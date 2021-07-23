@@ -329,13 +329,10 @@
 
 <script>
 import { Component, Vue } from "vue-property-decorator";
-import * as Vivus from "vivus";
 @Component({
   components: {},
 })
-export default class Home extends Vue {
-
-}
+export default class Home extends Vue {}
 </script>
 
 <style>
