@@ -24,12 +24,9 @@ export default class App extends Vue {}
 </script>
 <style lang="scss">
 @import "assets/style.css";
+
 .menu-exact-active {
-  color: indianred;
-  cursor: pointer;
-}
-.menu-active {
-  color: red;
+  font-weight: 600 !important;
 }
 @media only screen and (min-width: 320px) {
   .container {

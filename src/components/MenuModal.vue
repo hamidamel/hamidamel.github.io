@@ -75,7 +75,7 @@ export default {
     color: black;
     text-decoration: none;
     font-size: 24px;
-    line-height: 50px;
+    line-height: 60px;
     font-weight: 200;
   }
 }
