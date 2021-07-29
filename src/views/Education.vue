@@ -13,9 +13,9 @@
       <template v-slot:center>
         <button
           class="justify-content-center hide-in-desktop"
-          v-on:click="$router.push('/')"
+          v-on:click="$router.push('/about')"
         >
-          <home-icon size="1.5x"></home-icon>
+          <user-icon size="1.5x"></user-icon>
         </button>
       </template>
       <template v-slot:right>
