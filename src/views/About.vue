@@ -1,5 +1,28 @@
 <template>
   <div>
+    <div class="container">
+      <img src="../assets/me.jpeg" width="100px" />
+      <h1>A little about me</h1>
+      <p>
+        Experienced Front-End developer who is passionate about UI/UX design.<br />
+        I've started development since I was 16 with trying to make a Game using
+        'Basic' and 'Pascal' language then went to university and study Computer
+        engineering.
+        <br />
+        After I graduated, I'd established a small business in my hometown and
+        had held it for 8 years. I learned a lot from those hard-working days,
+        such as team leading or dealing with customers as well as using many
+        developing techniques and design patterns.
+        <br />
+        In 2016, something prompted me for a new challenging product, an
+        exciting application with the purpose of broadcasting women's football
+        news and information. For 2 years I've worked on the project and I think
+        it was the most interesting project I've ever done.
+        <br />
+        I've moved to Tehran 3 years ago and started work as a Front-End
+        developer at Tapsell Co.
+      </p>
+    </div>
     <arrow-buttons>
       <template v-slot:left>
         <button
@@ -51,12 +74,4 @@ import { HomeIcon } from "vue-feather-icons";
 export default class About extends Vue {}
 </script>
 
-<style>
-#home {
-  background-color: white;
-  width: calc(100vw - 80px);
-  height: calc(100vh - 80px);
-  padding-left: 40px;
-  padding-right: 40px;
-}
-</style>
+<style></style>

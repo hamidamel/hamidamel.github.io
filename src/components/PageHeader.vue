@@ -36,19 +36,19 @@ export default class PageHeader extends Vue {
 <style scoped lang="scss">
 .header-buttons {
   display: flex;
-  position: fixed;
+  position: relative;
   justify-items: center;
   align-items: center;
   flex: 1;
   top: 0px;
   line-height: 2rem;
   text-align: center;
-  width: 100%;
+  // width: 100%;
   padding-left: 35px;
   padding-top: 40px;
   padding-bottom: 40px;
   z-index: 100;
-  background-color: white;
+  background-color: transparent;
   &.dark {
     background-color: rgb(37, 37, 38);
     color: white;

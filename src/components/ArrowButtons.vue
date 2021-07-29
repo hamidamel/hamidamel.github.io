@@ -29,7 +29,8 @@ export default {
   bottom: 0px;
   line-height: 2rem;
   text-align: center;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   width: 100%;
   background-color: white;
   &.dark {
@@ -45,13 +46,16 @@ export default {
     color: rgb(37, 37, 38);
     border: none;
     padding: 0.4rem;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
+    &:first-child {
+      padding-left: 0.8rem;
+    }
+    &:last-child {
+      padding-right: 0.8rem;
+    }
     display: flex;
     align-items: center;
     line-height: 1rem;
-    flex: 2;
-
+    flex: 1 1 0px;
     &:disabled {
       color: rgba(0, 0, 0, 0.2);
     }

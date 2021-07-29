@@ -32,8 +32,8 @@
       <div id="home">
         <svg
           id="my-svg"
-          width="100%"
-          height="861px"
+          width="80%"
+          height="100%"
           viewBox="0 0 836 861"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -384,5 +384,8 @@ export default class Home extends Vue {}
   height: calc(100vh - 80px);
   padding-left: 40px;
   padding-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
