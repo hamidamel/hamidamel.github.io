@@ -93,8 +93,12 @@
     <PreviewModal v-show="openPreview" @close="closeModal" :theme="theme">
       <template v-slot:header></template>
       <template v-slot:body>
-        <img :src="experiences[currentExpIndex].images[0]"/>
-        <img src="../assets/phone-mockup.svg" width="240px" />
+        <div class="frame">
+          <img
+            width="100%"
+            :src="getImgUrl(experiences[currentExpIndex].images[0])"
+          />
+        </div>
       </template>
       <template v-slot:footer></template>
     </PreviewModal>
@@ -128,7 +132,11 @@ export default class Expriences extends Vue {
   lastWDelta = "";
   startWeel = false;
   openPreview = false;
-
+  baseAssetPath = "./assets/exp/";
+  getImgUrl(pet) {
+    var images = require.context("../assets/exp/", false, /\.png$/);
+    return images("./" + pet + ".png");
+  }
   showModal() {
     this.openPreview = true;
   }
@@ -174,6 +182,16 @@ export default class Expriences extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.frame {
+  background-image: url("../assets/phone-mockup.svg");
+  padding: 20px;
+  padding-top: 50px;
+  background-size: contain;
+  width: 200px;
+  margin: 20px;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
 @media only screen and (min-width: 320px) {
   .container {
     max-width: 100vw;

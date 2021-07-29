@@ -16,7 +16,7 @@ export default class Designer extends Vue {
       year: 2021,
       duration: "January, 30 - June 30",
       title: "FutureU",
-      images: ["/img/exp/f1.jpg"],
+      images: ["f1"],
       description:
         "is a 3D human body scanner android application by order of Payafanavaran Co. I was designed fully custom widgets to use in Flutter which is mentions in the developer part of my website.",
     },
