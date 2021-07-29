@@ -1,5 +1,20 @@
 <template>
   <div>
+    <div class="container">
+      <h4>Front-end frameworks</h4>
+      <p>Angular.js</p>
+      <p>React.js</p>
+      <p>Vue.js</p>
+      <h4>CSS frameworks</h4>
+      <p>bootstrap</p>
+      <p>SASS</p>
+      <h4>Back-end skills</h4>
+      <p>Angular.js</p>
+      <p>React.js</p>
+      <h4>Designing Tools</h4>
+      <p>Angular.js</p>
+      <p>React.js</p>
+    </div>
     <arrow-buttons>
       <template v-slot:left>
         <button

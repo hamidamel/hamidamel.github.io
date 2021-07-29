@@ -19,7 +19,7 @@
         news and information. For 2 years I've worked on the project and I think
         it was the most interesting project I've ever done.
         <br />
-        I've moved to Tehran 3 years ago and started work as a Front-End
+        at last I've moved to Tehran and started working as a Front-End
         developer at Tapsell Co.
       </p>
     </div>

@@ -93,6 +93,7 @@
     <PreviewModal v-show="openPreview" @close="closeModal" :theme="theme">
       <template v-slot:header></template>
       <template v-slot:body>
+        <img :src="experiences[currentExpIndex].images[0]"/>
         <img src="../assets/phone-mockup.svg" width="240px" />
       </template>
       <template v-slot:footer></template>
@@ -176,7 +177,8 @@ export default class Expriences extends Vue {
 @media only screen and (min-width: 320px) {
   .container {
     max-width: 100vw;
-    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr);
