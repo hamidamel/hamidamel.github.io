@@ -32,7 +32,7 @@ export default {
   padding-bottom: 20px;
   padding-top: 20px;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   &.dark {
     background-color: rgb(37, 37, 38);
     > button {

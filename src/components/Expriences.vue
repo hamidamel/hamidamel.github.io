@@ -85,7 +85,13 @@
         </div>
 
         <div class="experince-preview">
-          <img src="../assets/phone-mockup.svg" width="240px" />
+          <div class="frame">
+            <img
+              width="100%"
+              :src="getImgUrl(experiences[currentExpIndex].images[0])"
+            />
+          </div>
+          <!-- <img src="../assets/phone-mockup.svg" width="240px" /> -->
         </div>
       </div>
     </transition>
@@ -183,14 +189,14 @@ export default class Expriences extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .frame {
-  background-image: url("../assets/phone-mockup.svg");
-  padding: 20px;
-  padding-top: 50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   background-size: contain;
-  width: 200px;
+  width: 240px;
   margin: 20px;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-position: center center;
+  border-radius: 25px;
+  overflow: hidden;
 }
 @media only screen and (min-width: 320px) {
   .container {
@@ -202,7 +208,7 @@ export default class Expriences extends Vue {
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    max-height: 100vh;
+    max-height: calc(100vh - 80px);
     &.dark {
       background-color: rgb(37, 37, 38);
       color: white;
@@ -283,7 +289,8 @@ export default class Expriences extends Vue {
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    min-height: 100vh;
+    max-height: calc(100vh - 80px);
+    margin-top: -80px;
     &.dark {
       background-color: rgb(37, 37, 38);
       color: white;

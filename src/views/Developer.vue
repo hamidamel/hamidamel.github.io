@@ -19,16 +19,16 @@ export default class Home extends Vue {
     {
       year: 2021,
       duration: "January, 30 - June 30",
-      title: "Admin Panel",
+      title: "Tapsell Admin Panel",
       description:
-        "is a 3D human body scanner android application by order of Payafanavaran Co. I was designed fully custom widgets to use in Flutter which is mentions in the developer part of my website.",
+        "Redesign and rewrite admin panel of one main products of company i've worked in as a team leader and senior angular developer at Tapsell Co.",
     },
     {
       year: 2020,
       duration: "January, 30 - June 30",
-      title: "Dashboard Panel",
+      title: "Design new UI Kit",
       description:
-        "A Ui/Ux design for one of OcularAI Inc. projects. I designed a users panel Dashboard in four pages with adhere to Google Material Design System.",
+        "During the year I was responsible for design a new UI Kit for all Tapsell Co. products.",
     },
   ];
 }

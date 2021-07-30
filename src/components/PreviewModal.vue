@@ -6,7 +6,7 @@
           <slot name="header"></slot>
         </header>
         <slot name="body"></slot>
-        <slot name="footer"> </slot>
+        <!-- <slot name="footer"> </slot> -->
       </div>
       <arrow-buttons :theme="theme">
         <template v-slot:left>
@@ -72,6 +72,7 @@ export default {
   overflow-x: auto;
   display: flex;
   flex-direction: column;
+  padding: 40px;
 }
 
 .modal-header,
