@@ -43,6 +43,7 @@ export default class App extends Vue {
 </script>
 <style lang="scss">
 @import "assets/style.css";
+@import "assets/hamid-v1.0/style.css";
 
 .slide-enter-active {
   -moz-transition-duration: 0.3s;

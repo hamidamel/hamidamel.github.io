@@ -1,5 +1,18 @@
 <template>
-  <div>
+  <div id="education">
+    <div class="container">
+      <div>
+        <img src="../assets/montazeri.png" height="80px" />
+        <h4>Montazeri Technical College of Mashhad</h4>
+        <p>January 2008 - January 2010, MASHHAD</p>
+      </div>
+
+      <div>
+        <img src="../assets/sadjad.png" height="80px" />
+        <h4>Sadjad University Of Technology, Mashhad</h4>
+        <p>January 2010 - January 2012, MASHHAD</p>
+      </div>
+    </div>
     <arrow-buttons>
       <template v-slot:left>
         <button
@@ -51,12 +64,23 @@ import { HomeIcon } from "vue-feather-icons";
 export default class Education extends Vue {}
 </script>
 
-<style>
-#home {
-  background-color: white;
-  width: calc(100vw - 80px);
-  height: calc(100vh - 80px);
-  padding-left: 40px;
-  padding-right: 40px;
+<style scoped lang="scss">
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+    // height: 200px;
+  }
+  #education {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: calc(100vh - 160px);
+  }
 }
 </style>
