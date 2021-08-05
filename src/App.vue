@@ -115,7 +115,7 @@ body {
   text-align: left;
   direction: ltr;
   // height: calc(100vh - 80px);
-  padding-bottom: 60px;
+  // padding-bottom: 60px;
   &.dark {
     background: rgb(37, 37, 38);
   }

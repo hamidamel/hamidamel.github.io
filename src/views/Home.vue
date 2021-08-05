@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="homepage">
     <arrow-buttons>
       <template v-slot:left>
         <button
@@ -30,10 +30,19 @@
     </arrow-buttons>
     <transition name="fade">
       <div id="home">
+        <div class="hamidaz">
+          <span class="developer">
+            I am Front end developer and a UI/UX designer</span
+          ><br />
+          <!-- <span class="designer">
+            And a UI/UX designer specialising in UI design and design systems.
+          </span> -->
+        </div>
+
         <svg
+        style="margin-top: -40px"
           id="my-svg"
           width="80%"
-          height="100%"
           viewBox="0 0 836 861"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -377,7 +386,59 @@ import { UserIcon } from "vue-feather-icons";
 export default class Home extends Vue {}
 </script>
 
-<style>
+<style scoped lang="scss">
+@media only screen and (max-width: 768px) {
+  .hamidaz {
+    left: 0px !important;
+  }
+}
+.hamidaz {
+  position: fixed;
+  // background: rgba(37, 37, 38, 0.9);
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  // line-height: 2rem;
+  /* height: 2rem; */
+  vertical-align: middle;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -200px;
+  flex-direction: column;
+  max-width: 0px;
+  left: 160px;
+
+  br {
+    height: 0;
+    margin: 0;
+  }
+  @media only screen and (min-width: 768px) {
+    span {
+      // padding: 5px;
+      line-height: 48px;
+      font-weight: 900;
+      font-size: 48px;
+      letter-spacing: -1px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    span {
+      // padding: 5px;
+      line-height: 29px;
+      font-weight: 900;
+      font-size: 30px;
+      letter-spacing: -1px;
+    }
+  }
+  .developer {
+    background: rgba(255, 255, 160, 0.726);
+    color: rgba(37, 37, 38, 0.9);
+  }
+  .designer {
+    background: rgba(24, 24, 163, 0.9);
+  }
+}
 #home {
   background-color: white;
   width: calc(100vw - 80px);
@@ -386,6 +447,7 @@ export default class Home extends Vue {}
   padding-right: 40px;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 </style>
