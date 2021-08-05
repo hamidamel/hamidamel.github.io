@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span></span>
     <arrow-buttons :theme="theme">
       <template v-slot:left>
         <button
@@ -84,7 +85,10 @@
           </div>
         </div>
 
-        <div class="experince-preview">
+        <div
+          class="experince-preview"
+          v-if="experiences[currentExpIndex].images"
+        >
           <div class="frame">
             <img
               width="100%"
@@ -99,7 +103,7 @@
     <PreviewModal v-show="openPreview" @close="closeModal" :theme="theme">
       <template v-slot:header></template>
       <template v-slot:body>
-        <div class="frame">
+        <div class="frame" v-if="experiences[currentExpIndex].images">
           <img
             width="100%"
             :src="getImgUrl(experiences[currentExpIndex].images[0])"
@@ -139,9 +143,16 @@ export default class Expriences extends Vue {
   startWeel = false;
   openPreview = false;
   baseAssetPath = "./assets/exp/";
-  getImgUrl(pet) {
+  doTap() {
+    alert("s");
+  }
+  getImgUrl(img) {
     var images = require.context("../assets/exp/", false, /\.png$/);
-    return images("./" + pet + ".png");
+    if (img) {
+      return images("./" + img + ".png");
+    } else {
+      return "https://via.placeholder.com/200x200";
+    }
   }
   showModal() {
     this.openPreview = true;
@@ -189,7 +200,8 @@ export default class Expriences extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .frame {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   background-size: contain;
   width: 240px;
   margin: 20px;

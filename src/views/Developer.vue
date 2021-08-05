@@ -20,6 +20,7 @@ export default class Home extends Vue {
       year: 2021,
       duration: "January, 30 - June 30",
       title: "Tapsell Admin Panel",
+      images: [],
       description:
         "Redesign and rewrite admin panel of one main products of company i've worked in as a team leader and senior angular developer at Tapsell Co.",
     },
@@ -27,6 +28,7 @@ export default class Home extends Vue {
       year: 2020,
       duration: "January, 30 - June 30",
       title: "Design new UI Kit",
+      images: [],
       description:
         "During the year I was responsible for design a new UI Kit for all Tapsell Co. products.",
     },
