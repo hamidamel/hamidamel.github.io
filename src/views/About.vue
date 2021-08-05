@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="about">
     <div class="container">
       <img src="../assets/me.jpeg" width="100px" />
       <h1>A little about me</h1>
@@ -74,4 +74,33 @@ import { HomeIcon } from "vue-feather-icons";
 export default class About extends Vue {}
 </script>
 
-<style></style>
+<style scoped lang="scss">
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+    max-width: 50%;
+    // height: 200px;
+  }
+  #about {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: row;
+    height: calc(100vh - 160px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #about {
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+  }
+}
+</style>
