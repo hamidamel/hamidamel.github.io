@@ -96,8 +96,12 @@ export default class App extends Vue {
   font-weight: 600 !important;
 }
 body {
-  // height: 100vh;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  // overflow: hidden;
 }
+
 .container {
   padding-left: 40px;
   padding-right: 40px;
@@ -116,6 +120,7 @@ body {
   direction: ltr;
   // height: calc(100vh - 80px);
   // padding-bottom: 60px;
+  height: 100vh;
   &.dark {
     background: rgb(37, 37, 38);
   }

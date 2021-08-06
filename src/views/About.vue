@@ -101,6 +101,8 @@ export default class About extends Vue {}
     justify-content: flex-start;
     justify-items: flex-start;
     align-items: flex-start;
+    overflow: scroll;
+
   }
 }
 </style>
