@@ -102,13 +102,15 @@
 
     <PreviewModal v-show="openPreview" @close="closeModal" :theme="theme">
       <template v-slot:header></template>
-      <template v-slot:body>
-        <div class="frame" v-if="experiences[currentExpIndex].images">
-          <img
-            width="100%"
-            :src="getImgUrl(experiences[currentExpIndex].images[0])"
-          />
-        </div>
+      <template v-slot:body v-if="experiences[currentExpIndex].images">
+          <div
+            class="frame"
+            v-for="url in experiences[currentExpIndex].images"
+            :key="url"
+          >
+            <img width="100%" :src="getImgUrl(url)" />
+          </div>
+        
       </template>
       <template v-slot:footer></template>
     </PreviewModal>
@@ -149,7 +151,9 @@ export default class Expriences extends Vue {
   getImgUrl(img) {
     var images = require.context("../assets/exp/", false, /\.png$/);
     if (img) {
-      return images("./" + img + ".png");
+      if (img.includes("://")) {
+        return img;
+      } else return images("./" + img + ".png");
     } else {
       return "https://via.placeholder.com/200x200";
     }

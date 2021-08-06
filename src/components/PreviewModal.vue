@@ -5,7 +5,9 @@
         <header class="modal-header" id="modalTitle">
           <slot name="header"></slot>
         </header>
-        <slot name="body"></slot>
+        <div class="modal-body">
+          <slot name="body"></slot>
+        </div>
         <!-- <slot name="footer"> </slot> -->
       </div>
       <arrow-buttons :theme="theme">
@@ -68,8 +70,8 @@ export default {
 }
 
 .modal {
-  background: #ffffff;
-  overflow-x: auto;
+  // background: #ffffff;
+  // overflow-x: auto;
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -93,6 +95,7 @@ export default {
 
 .modal-body {
   position: relative;
+  display: flex;
 }
 
 .btn-close {
