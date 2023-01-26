@@ -34,5 +34,6 @@ jobs:
         run: |
           yarn install
           yarn build
+          mv ./dist/* ./docs/*
           echo Add other actions to build,
           echo test, and deploy your project.
