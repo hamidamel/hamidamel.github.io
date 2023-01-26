@@ -28,16 +28,10 @@ export default class App extends Vue {
   header = true;
   hideMenuInterval;
   created() {
-    // this.hideMenuInterval = setInterval(() => {
-    //   this.header = false;
-    //   this.hideMenuInterval = null;
-    // }, 3000);
+   
   }
   screenTouched() {
-    // this.header = true;
-    // this.hideMenuInterval = setInterval(() => {
-    //   this.header = false;
-    // }, 3000);
+  
   }
 }
 </script>
@@ -118,8 +112,6 @@ body {
   font-family: "Dana", Helvetica, Arial, sans-serif;
   text-align: left;
   direction: ltr;
-  // height: calc(100vh - 80px);
-  // padding-bottom: 60px;
   height: 100vh;
   &.dark {
     background: rgb(37, 37, 38);
